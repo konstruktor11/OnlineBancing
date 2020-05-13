@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Put money on an account";
+}
+<br /><br /><br />
+<h2 style="text-align:center;color:blue ">The put of facilities is on your personal account</h2>
+@using (Html.BeginForm())
+{       <p>
+            @Html.Label("Enter the amount of monies for put")<br />
+            @Html.TextBox("s")
+        </p>
+       
+        <p>
+            <input type="submit" value="To add facilities on an account" />
+        </p>
+   }

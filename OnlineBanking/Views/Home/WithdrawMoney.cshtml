@@ -1,0 +1,48 @@
+﻿@*Для адміна зняття коштів*@
+
+@model OnlineBanking.Models.ApplicationUser
+@{Layout = null; }
+<br /><br /><br />
+<h2 style="text-align:center;color:blue">Removal  of cash on a hand</h2>
+@using (Html.BeginForm("WithdrawMoney", "Home", FormMethod.Post))
+{
+    <fieldset>
+        <legend>Customer Information</legend>
+        <div class="display-label"><b>Last name</b></div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.KlSurname)
+        </div>
+
+        <div class="display-label"><b>Name</b></div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.KlName)
+        </div>
+                       
+         <div class="display-label"><b>User email</b></div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Email)
+        </div>
+       
+         <div class="display-label"><b>The balance in the account</b></div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.KlBalance)
+        </div>
+       
+        <p> Enter below a sum which wish to take off      <br />
+            @Html.TextBox("s")
+
+        </p>
+
+        
+        @Html.HiddenFor(m => m.Id)
+        @Html.HiddenFor(m => m.KlName)
+        @Html.HiddenFor(m => m.KlSurname) 
+        @Html.HiddenFor(m => m.KlAddress) 
+        @Html.HiddenFor(m => m.Email)
+        @Html.HiddenFor(m => m.UserName)
+        @Html.HiddenFor(m => m.KlPassportNum)
+        @Html.HiddenFor(m => m.KlPhone)
+        @Html.HiddenFor(m => m.KlBalance)
+          <p><input type="submit" value="To take  off a money" /></p>
+    </fieldset>
+}

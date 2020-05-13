@@ -1,0 +1,10 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated )
+{
+    <h4>Admin</h4>
+     <div class="alert alert-success text-center">@Html.ActionLink("Balance", "BALANSKL", "Home")</div><br />
+<div class="alert alert-warning text-center">@Html.ActionLink("To put a money", "PutMoney", "Home")</div><br />
+    <div class="alert alert-info text-center"> @Html.ActionLink("To remove a money", "CabinetGrud", "Home")</div> <br />
+    <div class="alert alert-danger text-center">@Html.ActionLink("Information about an user", "AboutKl", "Home")</div>
+}
+

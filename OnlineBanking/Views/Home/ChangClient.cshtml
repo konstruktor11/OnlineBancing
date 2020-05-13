@@ -1,0 +1,49 @@
+﻿
+@*Для адміна*@
+
+@model OnlineBanking.Models.ApplicationUser
+@{Layout = null; }
+
+<h2 style="text-align:center;color:blue">Change of the personal information</h2>
+@using (Html.BeginForm("ChangPersDetSav", "Home", FormMethod.Post))
+{
+    <fieldset>
+        <p>
+            @Html.LabelFor(m => m.KlName, "Name of user")
+            <br />
+            @Html.EditorFor(m => m.KlName)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.KlSurname, "Last name of user")
+            <br />
+            @Html.EditorFor(m => m.KlSurname)
+
+        </p>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.KlAddress, "Address of dwelling", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.KlAddress, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.KlPassportNum, "Number of passport ", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.KlPassportNum, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.KlPhone, "Telephone number", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.KlPhone, new { @class = "form-control" })
+            </div>
+        </div>
+        @Html.HiddenFor(m => m.Id)
+        @Html.HiddenFor(m => m.Email)
+        @Html.HiddenFor(m => m.UserName)
+        @Html.HiddenFor(m=>m.KlBalance)
+        <p><input type="submit" value="To send" /></p>
+    </fieldset>
+}

@@ -1,0 +1,30 @@
+﻿@{Layout = null; }
+
+@model OnlineBanking.Models.ApplicationUser
+
+
+<fieldset>
+    <legend>Customer Information</legend>
+    <div class="display-label"><b>Last name</b></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.KlSurname)
+    </div>
+
+    <div class="display-label"><b>Name</b></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.KlName)
+    </div>
+    
+    <div class="display-label"><b>The balance in the account</b></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.KlBalance)
+    </div>
+    <div class="display-label"><b>User email</b></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+    <div class="display-label"><b>Address of residence</b></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.KlAddress)
+    </div>
+</fieldset>

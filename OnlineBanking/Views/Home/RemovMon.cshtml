@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "RemovMon";
+}
+<br /><br /><br />
+<h2 style="text-align:center;color:blue ">Removal of money</h2>
+@using (Html.BeginForm())
+{       <p>
+        @Html.Label("Enter a sum which you want to take off")<br />
+        @Html.TextBox("s")
+    </p>
+
+        <p>
+            <input type="submit" value="To take off a money" />
+        </p>
+}

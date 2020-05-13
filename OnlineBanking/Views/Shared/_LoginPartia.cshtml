@@ -1,0 +1,19 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated && User.Identity.Name == "onlinebank@pol.km")
+{   <h2 style="text-align:center;color:darkgreen ">Administrator</h2>
+     <div class="alert alert-success text-center">@Html.ActionLink("Total number of clients", "TotNumCl", "Home")</div><br />
+    <div class="alert alert-warning text-center">@Html.ActionLink("Total amount of money deposited in the bank", "TotMoBank", "Home")</div><br />
+    <div class="alert alert-info text-center"> @Html.ActionLink("List of all clients", "ListOllKl", "Home")</div> <br />
+   
+}
+else if (Request.IsAuthenticated)
+{   <h2 style="text-align:center;color:darkgreen ">User</h2>
+     <div class="alert alert-success text-center">@Html.ActionLink("Total amount of money", "BALANSKL", "Home")</div><br />
+     <div class="alert alert-warning text-center">@Html.ActionLink("To put a money", "PutMoney", "Home")</div><br />
+    <div class="alert alert-info text-center"> @Html.ActionLink("To remove a money", "RemovMon", "Home")</div> <br />
+    <div class="alert alert-danger text-center">@Html.ActionLink("View the history of the transactions", "ViHist", "Home")</div>
+    <div class="alert alert-danger text-center">@Html.ActionLink("Transfer money to other accounts", "TransToOthAc", "Home")</div>
+     <div class="alert alert-danger text-center">@Html.ActionLink("Information about an user", "AboutKl", "Home")</div>
+    <div class="alert alert-danger text-center">@Html.ActionLink("Change personal details", "ChangPersDet", "Home")</div>
+
+}
